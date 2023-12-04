@@ -24,18 +24,13 @@ with open('Day01.txt', 'r') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
-        print(f"The total is now: {total}")
-        print(f"Line is: {line}")
         line2 = find_digits_written_out(line)
-        print(f"Line is: {line2}")
-
         match1 = re.search(r'\d', line2)
         first_digit = match1.group()
         reverse = line2[::-1]
         match2 = re.search(r'\d', reverse)
         last_digit = match2.group()
         number = first_digit + last_digit
-        print(f"Number is: {number}")
         total += int(number)
 
 print(f"The total is: {total}")
